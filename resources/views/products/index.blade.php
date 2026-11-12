@@ -1,9 +1,10 @@
-<x-app-layout>
-    <x-slot:title>Product</x-slot:title>
+<x-app>
+    <x-slot:title>{{ $title ?? 'Product' }}</x-slot:title>
 
     @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
 
@@ -34,7 +35,7 @@
                         <td>
                             <div class="d-flex gap-1">
                                 <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning text-white btn-sm px-3">Edit</a>
-                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin?');">
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm px-3">Delete</button>
@@ -50,4 +51,4 @@
             </tbody>
         </table>
     </div>
-</x-app-layout>
+</x-app>

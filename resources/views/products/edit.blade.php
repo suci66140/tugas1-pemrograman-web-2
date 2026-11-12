@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
     <x-slot:title>Edit Product</x-slot:title>
 
     <form action="{{ route('products.update', $product->id) }}" method="POST" class="mt-4">
@@ -35,4 +35,4 @@
             <button type="submit" class="btn btn-primary">Update</button>
         </div>
     </form>
-</x-app-layout>
+</x-app>

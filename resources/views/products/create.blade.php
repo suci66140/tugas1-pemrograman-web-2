@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
     <x-slot:title>Create Product</x-slot:title>
 
     <form action="{{ route('products.store') }}" method="POST" class="mt-4">
@@ -33,4 +33,4 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-</x-app-layout>
+</x-app>
